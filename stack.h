@@ -11,6 +11,7 @@ class Stack {
     public:
         Stack();
         Stack(Node*);
+        ~Stack();
 
         void push(int);
         int pop();

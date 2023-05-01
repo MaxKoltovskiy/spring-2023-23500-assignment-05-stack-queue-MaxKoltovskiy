@@ -3,10 +3,13 @@
 Queue::Queue() {
     head = 0;
     tail = 4;
+    for(int i = 0; i <= tail; i++) {
+        q[i] = 0;
+    }
 }
 
 void Queue::enqueue(int data) { //add an item to the back of the queue
-    if(head == tail) {
+    if(q[tail] != 0) {
         throw QUEUE_ERR_FULL;
     }
     q[head] = data;
@@ -40,5 +43,5 @@ bool Queue::is_empty() {
 }
 
 bool Queue::is_full() {
-    return head == tail;
+    return q[tail] != 0;
 }

@@ -8,6 +8,17 @@ Stack::Stack(Node* n) {
     topindex = n;
 }
 
+Stack::~Stack() {
+    Node *current = topindex;
+    Node *next = nullptr;
+    
+    while(current != nullptr) {
+        next = current -> getNext();
+        delete current;
+        current = next;
+    }
+}
+
 void Stack::push(int num) { //add an item to the top
     Node *top = new Node(num);
 
